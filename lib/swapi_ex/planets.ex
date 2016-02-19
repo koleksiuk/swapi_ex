@@ -1,3 +1,3 @@
 defmodule SwapiEx.Planets do
-  use SwapiEx.Resource, "planets"
+  use SwapiEx.Resource
 end

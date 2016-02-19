@@ -1,6 +1,7 @@
 defmodule SwapiEx.Resource do
-  defmacro __using__(resource_name) do
+  defmacro __using__(resource_path) do
     quote do
+
       def fetch do
         base_path
         |> SwapiEx.Api.fetch
@@ -19,8 +20,19 @@ defmodule SwapiEx.Resource do
         response.body
       end
 
-      defp base_path do
-        unquote(resource_name)
+      def base_path do
+        case unquote(resource_path) do
+          [] -> resource_path_from_module
+          _ -> unquote(resource_path)
+        end
+      end
+
+      defp resource_path_from_module do
+        __MODULE__
+        |> to_string
+        |> String.split(".")
+        |> Enum.at(-1)
+        |> String.downcase
       end
     end
   end
