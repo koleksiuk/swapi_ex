@@ -14,7 +14,7 @@ defmodule SwapiEx.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :httpotion]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,9 @@ defmodule SwapiEx.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:poison, "~> 2.1"},
+      {:httpotion, "~> 2.2"}
+    ]
   end
 end
