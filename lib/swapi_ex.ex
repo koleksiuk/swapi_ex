@@ -1,0 +1,2 @@
+defmodule SwapiEx do
+end
