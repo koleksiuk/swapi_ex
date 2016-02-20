@@ -3,14 +3,14 @@ defmodule SwapiEx.Resource do
     quote do
 
       def fetch do
-        base_path
+        "#{base_path}/"
         |> SwapiEx.Api.fetch
         |> get_body
         |> Poison.decode!
       end
 
       def fetch(id) do
-        "#{base_path}/#{to_string(id)}"
+        "#{base_path}/#{to_string(id)}/"
         |> SwapiEx.Api.fetch
         |> get_body
         |> Poison.decode!

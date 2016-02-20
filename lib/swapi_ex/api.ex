@@ -2,7 +2,6 @@ defmodule SwapiEx.Api do
   def fetch(path) do
     path
     |> build_url
-    |> IO.puts
     |> HTTPotion.get
   end
 

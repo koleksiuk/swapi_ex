@@ -2,7 +2,7 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-config :swapi_ex, base_url: "http://swapi.co/api"
+config :swapi_ex, base_url: "https://swapi.co/api"
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
